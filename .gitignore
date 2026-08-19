@@ -7,3 +7,6 @@ node_modules/
 gemini-bridge.json
 .dsh-gemini-bridge.json
 .dsh-gemini/
+
+# 本地 pnpm 产物（含绝对路径，不发布）
+pnpm-lock.yaml
