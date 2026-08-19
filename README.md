@@ -7,7 +7,7 @@ DeepSeek Harness 插件：为 DeepSeek 模型桥接 **Google Gemini** 的多模�
 | 工具 | 作用 |
 | --- | --- |
 | `gemini_vision` | 识别/读取/描述/分析图片（OCR、物体、图表），支持本地路径或 http(s) URL |
-| `gemini_generate_image` | 文本生图，生成后自动识别检查并迭代优化（refine/rounds 可调） |
+| `gemini_generate_image` | 文本生图，生成后**必定用 Gemini 视觉模型自检反馈**（不达标时按优化 prompt 重绘） |
 | `gemini_optimize_image` | 改图/优化已有图片：先分析原图 → 生成改进版 → 自检迭代 |
 
 ## 安装
@@ -29,7 +29,8 @@ dsh plugin --profile web add /path/to/dsh-gemini-bridge
 ## 说明
 
 - 配置（含 API Key）保存在 `~/.dsh/gemini-bridge.json`。
-- 生成的图片保存在会话工作区 `.dsh-gemini/images/` 下，并在结果中内联展示。
+- 生成后自动用 Gemini 视觉模型检查成品图并给出反馈（闭环，不依赖 modlens）。
+- 图片保存在 `~/.dsh/gemini-bridge-images/`，工具结果卡片内联显示图片并提供可点击链接 `/api/gemini-bridge/images/<file>`。
 - 仅走 **原生 Gemini REST API**（`generateContent` / `predict`），端点勿加 `/openai`。
 
 ## 目录
