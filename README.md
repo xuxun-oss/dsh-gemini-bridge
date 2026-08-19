@@ -10,6 +10,13 @@ DeepSeek Harness 插件：为 DeepSeek 模型桥接 **Google Gemini** 的多模�
 | `gemini_generate_image` | 文本生图，生成后**必定用 Gemini 视觉模型自检反馈**（不达标时按优化 prompt 重绘） |
 | `gemini_optimize_image` | 改图/优化已有图片：先分析原图 → 生成改进版 → 自检迭代 |
 
+## 核心卖点：全能一体，无需切换模型
+
+- **一个 DeepSeek 会话搞定一切**：直接用常规 DeepSeek 模型（不必换成视觉模型），需要看图、生图、改图时，插件自动路由到对应的 Gemini 多模态/生图模型——**全程零手动切换模型**。
+- **比 modlens 等更完整**：modlens 只是「给纯文本模型装一只读图的眼睛」；本插件是**视觉识别 + 图像生成 + 图像编辑 + 自检反馈的完整闭环**，并且直接复用你自己的 Gemini API Key，不依赖任何第三方桥接、无额外订阅。
+- **自动调用，无需操心**：识别 → `gemini_vision`；生图 → `gemini_generate_image`；改图 → `gemini_optimize_image`。DeepSeek 模型通过系统提示与工具描述自动选对工具，对用户完全透明。
+- **自检闭环，质量把关**：生成/优化后，自动用 Gemini 视觉模型检查成品图，不达标按优化提示自动重绘，并把检查结论（画面描述 / 达标与否 / 问题清单）直接反馈出来。
+
 ## 安装
 
 ```bash

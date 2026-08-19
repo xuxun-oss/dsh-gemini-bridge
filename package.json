@@ -1,7 +1,7 @@
 {
   "name": "dsh-gemini-bridge",
   "version": "1.1.0",
-  "description": "DeepSeek Harness 插件：为 DeepSeek 模型桥接 Google Gemini 的多模态识别与图像生成。注册 gemini_vision / gemini_generate_image / gemini_optimize_image 三个工具，设置页填写 API Key 并自动/手动选择视觉与生图模型，生图后自动识别检查并迭代优化。",
+  "description": "DeepSeek Harness 全能插件：识别/生图/改图一体化，无需切换模型——用常规 DeepSeek 模型即可自动调用 Gemini 视觉与生图模型（gemini_vision / gemini_generate_image / gemini_optimize_image），生成后自动视觉自检反馈，优于 modlens，直接复用你自己的 Gemini API Key。",
   "keywords": [
     "deepseek",
     "harness",
