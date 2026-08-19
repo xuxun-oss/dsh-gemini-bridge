@@ -26,6 +26,17 @@ dsh plugin --profile web add /path/to/dsh-gemini-bridge
 
 安装后打开 **设置 → Gemini 视觉桥**，填入 Google AI Studio 的 API Key，点「测试连接」即可。
 
+## 多后端支持（不止 Gemini）
+
+通过 provider 抽象层适配不同后端，**同一个 DeepSeek 会话、无需切换模型**：
+
+| 后端 | 视觉识别/自检 | 图像生成 | 适用模型示例 |
+| --- | --- | --- | --- |
+| `gemini`（默认） | `gemini-3.7-flash` 等 | Nano Banana 系列 / Imagen | Gemini 原生 API |
+| `openai`（OpenAI 兼容） | `gpt-4o-mini`、`gpt-4o`、`qwen-vl-max`、`glm-4v-plus`、Moonshot 视觉等 | `gpt-image-1`、`dall-e-3`、Flux 等 | OpenAI、各类中转/聚合、自建网关 |
+
+设置页「后端 Provider」下拉切换；端点、模型列表、鉴权头（`x-goog-api-key` / `Bearer`）自动适配。换后端只需填对应的 API Key 与端点，工具调用方式完全不变。
+
 ## 模型自动选择（auto）
 
 - 识别/自检：`gemini-3.7-flash` → `gemini-3.6-flash` → `gemini-3.1-flash-lite` → `gemini-2.5-flash`

@@ -1,7 +1,7 @@
 {
   "name": "dsh-gemini-bridge",
-  "version": "1.1.0",
-  "description": "DeepSeek Harness 全能插件：识别/生图/改图一体化，无需切换模型——用常规 DeepSeek 模型即可自动调用 Gemini 视觉与生图模型（gemini_vision / gemini_generate_image / gemini_optimize_image），生成后自动视觉自检反馈，优于 modlens，直接复用你自己的 Gemini API Key。",
+  "version": "1.2.0",
+  "description": "DeepSeek Harness 全能插件：识别/生图/改图一体化，无需切换模型——用常规 DeepSeek 模型即可自动调用视觉与生图模型（gemini_vision / gemini_generate_image / gemini_optimize_image）。多后端支持：Gemini 原生 + OpenAI 兼容（Qwen-VL/GLM-4V/GPT-4o/gpt-image 等），生成后自动视觉自检反馈，优于 modlens，直接复用你自己的 API Key。",
   "keywords": [
     "deepseek",
     "harness",
