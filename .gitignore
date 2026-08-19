@@ -1,0 +1,9 @@
+node_modules/
+*.log
+.DS_Store
+.env
+*.local
+# 配置/密钥绝不上传（实际存放在 ~/.dsh/gemini-bridge.json）
+gemini-bridge.json
+.dsh-gemini-bridge.json
+.dsh-gemini/
