@@ -11,9 +11,24 @@
     "gemini",
     "vision",
     "image-generation",
-    "multimodal"
+    "image-editing",
+    "multimodal",
+    "nano-banana",
+    "openai-compatible"
   ],
   "type": "module",
+  "author": "Xun Xu <xuxun-oss@users.noreply.github.com>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xuxun-oss/dsh-gemini-bridge.git"
+  },
+  "bugs": {
+    "url": "https://github.com/xuxun-oss/dsh-gemini-bridge/issues"
+  },
+  "homepage": "https://github.com/xuxun-oss/dsh-gemini-bridge#readme",
+  "engines": {
+    "node": ">=18"
+  },
   "main": "lib/index.js",
   "exports": {
     ".": "./lib/index.js",
@@ -23,7 +38,9 @@
   "files": [
     "lib",
     "cordis.patch.yml",
-    "README.md"
+    "README.md",
+    "README.en.md",
+    "CHANGELOG.md"
   ],
   "license": "MIT",
   "dsh": {
