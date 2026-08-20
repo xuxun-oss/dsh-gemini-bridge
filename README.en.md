@@ -1,8 +1,8 @@
-# dsh-gemini-bridge
+# dsh-vision-imagen
 
-[![GitHub stars](https://img.shields.io/github/stars/xuxun-oss/dsh-gemini-bridge?style=flat-square)](https://github.com/xuxun-oss/dsh-gemini-bridge/stargazers)
-[![GitHub license](https://img.shields.io/github/license/xuxun-oss/dsh-gemini-bridge?style=flat-square)](LICENSE)
-[![GitHub last commit](https://img.shields.io/github/last-commit/xuxun-oss/dsh-gemini-bridge?style=flat-square)](https://github.com/xuxun-oss/dsh-gemini-bridge/commits/main)
+[![GitHub stars](https://img.shields.io/github/stars/xuxun-oss/dsh-vision-imagen?style=flat-square)](https://github.com/xuxun-oss/dsh-vision-imagen/stargazers)
+[![GitHub license](https://img.shields.io/github/license/xuxun-oss/dsh-vision-imagen?style=flat-square)](LICENSE)
+[![GitHub last commit](https://img.shields.io/github/last-commit/xuxun-oss/dsh-vision-imagen?style=flat-square)](https://github.com/xuxun-oss/dsh-vision-imagen/commits/main)
 [![Node version](https://img.shields.io/badge/node-%3E%3D18-brightgreen?style=flat-square)](package.json)
 [![中文](https://img.shields.io/badge/readme-%E4%B8%AD%E6%96%87-blue?style=flat-square)](README.md)
 
@@ -41,15 +41,15 @@ When a regular DeepSeek model needs to look at, generate, or edit an image, the 
 ### Option A: local directory (development / trial)
 
 ```bash
-git clone https://github.com/xuxun-oss/dsh-gemini-bridge.git
-dsh plugin --profile web add /path/to/dsh-gemini-bridge
+git clone https://github.com/xuxun-oss/dsh-vision-imagen.git
+dsh plugin --profile web add /path/to/dsh-vision-imagen
 # restart dsh web (or follow the hot-reload hint)
 ```
 
 ### Option B: via npm (after publishing)
 
 ```bash
-dsh plugin --profile web add dsh-gemini-bridge
+dsh plugin --profile web add dsh-vision-imagen
 ```
 
 Then open **Settings → Gemini Vision Bridge**, paste a Google AI Studio API key, and click **Test Connection**.
@@ -107,7 +107,7 @@ A: `~/.dsh/gemini-bridge-images/`, and they are also registered as attachments s
 
 Issues and PRs are welcome:
 
-- Report bugs / suggest models → [Issues](https://github.com/xuxun-oss/dsh-gemini-bridge/issues)
+- Report bugs / suggest models → [Issues](https://github.com/xuxun-oss/dsh-vision-imagen/issues)
 - Code changes → fork, open a PR; CI runs a syntax check automatically
 - Documentation fixes in either language are appreciated
 

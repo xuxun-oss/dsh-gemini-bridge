@@ -1,8 +1,8 @@
-# dsh-gemini-bridge
+# dsh-vision-imagen
 
-[![GitHub stars](https://img.shields.io/github/stars/xuxun-oss/dsh-gemini-bridge?style=flat-square)](https://github.com/xuxun-oss/dsh-gemini-bridge/stargazers)
-[![GitHub license](https://img.shields.io/github/license/xuxun-oss/dsh-gemini-bridge?style=flat-square)](LICENSE)
-[![GitHub last commit](https://img.shields.io/github/last-commit/xuxun-oss/dsh-gemini-bridge?style=flat-square)](https://github.com/xuxun-oss/dsh-gemini-bridge/commits/main)
+[![GitHub stars](https://img.shields.io/github/stars/xuxun-oss/dsh-vision-imagen?style=flat-square)](https://github.com/xuxun-oss/dsh-vision-imagen/stargazers)
+[![GitHub license](https://img.shields.io/github/license/xuxun-oss/dsh-vision-imagen?style=flat-square)](LICENSE)
+[![GitHub last commit](https://img.shields.io/github/last-commit/xuxun-oss/dsh-vision-imagen?style=flat-square)](https://github.com/xuxun-oss/dsh-vision-imagen/commits/main)
 [![Node version](https://img.shields.io/badge/node-%3E%3D18-brightgreen?style=flat-square)](package.json)
 [![English](https://img.shields.io/badge/readme-English-blue?style=flat-square)](README.en.md)
 
@@ -41,15 +41,15 @@ DeepSeek Harness 插件：为 DeepSeek 模型桥接 **Google Gemini** 的多模�
 ### 方式一：本地目录（开发/试用）
 
 ```bash
-git clone https://github.com/xuxun-oss/dsh-gemini-bridge.git
-dsh plugin --profile web add /path/to/dsh-gemini-bridge
+git clone https://github.com/xuxun-oss/dsh-vision-imagen.git
+dsh plugin --profile web add /path/to/dsh-vision-imagen
 # 然后重启 dsh web（或按 dsh 的插件热载提示操作）
 ```
 
 ### 方式二：npm 安装（发布后）
 
 ```bash
-dsh plugin --profile web add dsh-gemini-bridge
+dsh plugin --profile web add dsh-vision-imagen
 ```
 
 安装后打开 **设置 → Gemini 视觉桥**，填入 Google AI Studio 的 API Key，点「测试连接」即可。
@@ -107,7 +107,7 @@ A: `~/.dsh/gemini-bridge-images/`，同时通过附件机制入库，可在会�
 
 欢迎提 Issue 与 PR：
 
-- 报告 Bug / 建议新模型 → [Issues](https://github.com/xuxun-oss/dsh-gemini-bridge/issues)
+- 报告 Bug / 建议新模型 → [Issues](https://github.com/xuxun-oss/dsh-vision-imagen/issues)
 - 修改代码 → Fork 后提交 PR，CI 会自动做语法检查
 - 完善文档 → README 中英双语的修正同样欢迎
 

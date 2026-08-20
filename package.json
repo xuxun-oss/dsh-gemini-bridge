@@ -1,5 +1,5 @@
 {
-  "name": "dsh-gemini-bridge",
+  "name": "dsh-vision-imagen",
   "version": "1.2.0",
   "description": "DeepSeek Harness 全能插件：识别/生图/改图一体化，无需切换模型——用常规 DeepSeek 模型即可自动调用视觉与生图模型（gemini_vision / gemini_generate_image / gemini_optimize_image）。多后端：Gemini 原生 + 任意 OpenAI 兼容服务（GPT-4o、Qwen-VL、GLM-4V、Moonshot、gpt-image、DALL-E、Flux、Stable Diffusion、OpenRouter、硅基流动、各类中转等），生成后自动视觉自检反馈，优于 modlens。",
   "keywords": [
@@ -20,12 +20,12 @@
   "author": "Xun Xu <xuxun-oss@users.noreply.github.com>",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/xuxun-oss/dsh-gemini-bridge.git"
+    "url": "git+https://github.com/xuxun-oss/dsh-vision-imagen.git"
   },
   "bugs": {
-    "url": "https://github.com/xuxun-oss/dsh-gemini-bridge/issues"
+    "url": "https://github.com/xuxun-oss/dsh-vision-imagen/issues"
   },
-  "homepage": "https://github.com/xuxun-oss/dsh-gemini-bridge#readme",
+  "homepage": "https://github.com/xuxun-oss/dsh-vision-imagen#readme",
   "engines": {
     "node": ">=18"
   },

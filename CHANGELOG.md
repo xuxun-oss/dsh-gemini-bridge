@@ -1,10 +1,14 @@
 # Changelog
 
-All notable changes to **dsh-gemini-bridge** are documented in this file.
+All notable changes to **dsh-vision-imagen** are documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+
+### Changed
+
+- **Renamed to `dsh-vision-imagen`** (previously `dsh-gemini-bridge`): the plugin now covers far more than Gemini (vision + image generation across Gemini native, Imagen, and any OpenAI-compatible backend). Only the **external identity** changed (repo/package name, README, metadata URLs); the internal plugin id (`dsh-gemini-bridge`), config paths (`~/.dsh/gemini-bridge.json`, `~/.dsh/gemini-bridge-images/`), HTTP routes and tool names (`gemini_vision` / `gemini_generate_image` / `gemini_optimize_image`) are **unchanged** for compatibility with existing profiles and trained tool calls.
 
 ### Docs
 
