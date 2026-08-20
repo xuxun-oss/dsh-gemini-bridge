@@ -23,6 +23,19 @@ DeepSeek Harness 插件：为 DeepSeek 模型桥接 **Google Gemini** 的多模�
 - **自动调用，无需操心**：识别 → `gemini_vision`；生图 → `gemini_generate_image`；改图 → `gemini_optimize_image`。DeepSeek 模型通过系统提示与工具描述自动选对工具，对用户完全透明。
 - **自检闭环，质量把关**：生成/优化后，自动用 Gemini 视觉模型检查成品图，不达标按优化提示自动重绘，并把检查结论（画面描述 / 达标与否 / 问题清单）直接反馈出来。
 
+## 🧩 环境要求（依赖）
+
+| 依赖 | 要求 | 说明 |
+| --- | --- | --- |
+| **DeepSeek Harness（`dsh`）** | ≥ `0.1.0-rc.7`（rc 通道） | 插件宿主。先全局安装 dsh，再用 `dsh plugin --profile web add ...` 加载本插件 |
+| **Node.js** | ≥ 18 | 宿主半运行环境（`engines`） |
+| **`@deepseek-ai/dsh-tools`** | peer 依赖（`*`） | **必需**：宿主半通过 `defineTool` 注册工具。由 dsh 宿主提供，或随 `pnpm install` 自动解析——**无需手动安装** |
+| **`react`** | ^18.2.0（peer） | 浏览器半（设置页）所需，由 dsh Web 前端提供 |
+| **`@deepseek-ai/dsh-client-runtime`** | rc 通道 | 客户端核心服务，声明于 `dsh.client.inject`，dsh Web 构建时自动注入 |
+| **后端 API Key** | 自备 | Gemini（Google AI Studio 免费 Key）或所选 OpenAI 兼容后端 |
+
+> 本插件运行时**只依赖** `@deepseek-ai/dsh-tools`（宿主半）与 `react`（浏览器半），其余均为 Node.js 内置模块；`@deepseek-ai/*` 其余包由 dsh 宿主自带，不会重复安装。已实测：dsh `0.1.0-rc.7` + `@deepseek-ai/dsh-tools@0.1.0-rc.7` 可正常解析运行。
+
 ## 📦 安装
 
 ### 方式一：本地目录（开发/试用）

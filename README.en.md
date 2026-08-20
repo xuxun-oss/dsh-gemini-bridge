@@ -23,6 +23,19 @@ When a regular DeepSeek model needs to look at, generate, or edit an image, the 
 - **Automatic routing**: the DeepSeek model picks the right tool (`gemini_vision` / `gemini_generate_image` / `gemini_optimize_image`) from the injected system prompt and tool descriptions.
 - **Quality gate**: every generated/edited image is checked by a vision model; failures trigger an automatic redraw with a refined prompt, and the verdict (description / pass-fail / issue list) is reported back.
 
+## 🧩 Requirements (dependencies)
+
+| Dependency | Requirement | Notes |
+| --- | --- | --- |
+| **DeepSeek Harness (`dsh`)** | ≥ `0.1.0-rc.7` (rc channel) | The host. Install dsh globally first, then load this plugin via `dsh plugin --profile web add ...` |
+| **Node.js** | ≥ 18 | Host-half runtime (`engines`) |
+| **`@deepseek-ai/dsh-tools`** | peer dep (`*`) | **Required**: the host half registers tools via `defineTool`. Provided by the dsh host, or auto-resolved by `pnpm install` — **no manual install needed** |
+| **`react`** | ^18.2.0 (peer) | Needed by the browser half (settings page); provided by the dsh web frontend |
+| **`@deepseek-ai/dsh-client-runtime`** | rc channel | Client core services, declared via `dsh.client.inject`, injected automatically by the dsh web build |
+| **Backend API key** | yours | Gemini (free key from Google AI Studio) or the OpenAI-compatible backend of your choice |
+
+> At runtime this plugin only depends on `@deepseek-ai/dsh-tools` (host half) and `react` (browser half); everything else uses Node.js built-ins. The rest of the `@deepseek-ai/*` packages ship with the dsh host and are never duplicated. Verified working with dsh `0.1.0-rc.7` + `@deepseek-ai/dsh-tools@0.1.0-rc.7`.
+
 ## 📦 Installation
 
 ### Option A: local directory (development / trial)

@@ -4,6 +4,12 @@ All notable changes to **dsh-gemini-bridge** are documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [Unreleased]
+
+### Docs
+
+- Document the dependency environment (README zh/en): dsh host ≥ `0.1.0-rc.7`, Node ≥ 18, `@deepseek-ai/dsh-tools` peer dep (host-provided, no manual install), `react` for the browser half, `@deepseek-ai/dsh-client-runtime` injected by the dsh web build, and the user-provided backend API key.
+
 ## [1.2.0] - 2026-08-19
 
 ### Added
