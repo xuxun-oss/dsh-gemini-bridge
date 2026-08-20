@@ -1,10 +1,8 @@
-# dsh-vision-imagen — bundle patch layer (repo/package renamed from dsh-gemini-bridge).
+# dsh-vision-imagen — bundle patch layer.
 # `dsh plugin --profile <name> add dsh-vision-imagen` 会把本包加入
 # dsh.profile.bundles，然后应用此 patch：下面这行把包的主入口（lib/index.js）
 # 作为宿主半（一个普通 Cordis 插件）加载；因为包声明了 dsh.client，Web 应用
 # 同时加载 ./client 作为浏览器半。
-# 注意：下方 id/name 保留旧值 dsh-gemini-bridge（插件注册名），
-# 与既有 profile 配置兼容；仅包/仓库对外名改为 dsh-vision-imagen。
 - insert:
-    - id: dsh-gemini-bridge
-      name: dsh-gemini-bridge
+    - id: dsh-vision-imagen
+      name: dsh-vision-imagen

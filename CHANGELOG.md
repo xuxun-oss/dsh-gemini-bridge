@@ -8,11 +8,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 ### Changed
 
-- **Renamed to `dsh-vision-imagen`** (previously `dsh-gemini-bridge`): the plugin now covers far more than Gemini (vision + image generation across Gemini native, Imagen, and any OpenAI-compatible backend). Only the **external identity** changed (repo/package name, README, metadata URLs); the internal plugin id (`dsh-gemini-bridge`), config paths (`~/.dsh/gemini-bridge.json`, `~/.dsh/gemini-bridge-images/`), HTTP routes and tool names (`gemini_vision` / `gemini_generate_image` / `gemini_optimize_image`) are **unchanged** for compatibility with existing profiles and trained tool calls.
-
-### Docs
-
-- Document the dependency environment (README zh/en): dsh host ≥ `0.1.0-rc.7`, Node ≥ 18, `@deepseek-ai/dsh-tools` peer dep (host-provided, no manual install), `react` for the browser half, `@deepseek-ai/dsh-client-runtime` injected by the dsh web build, and the user-provided backend API key.
+- **统一命名（Breaking）**：内部与对外名称完全统一为 `dsh-vision-imagen`。插件注册名 / cordis patch id、配置路径 `~/.dsh/vision-imagen.json`、图片目录 `~/.dsh/vision-imagen-images/`、HTTP 路由 `/api/vision-imagen/*`、设置项 id 均从 `dsh-gemini-bridge` 迁移；工具改名（后端无关）：`gemini_vision` → `vision_read`、`gemini_generate_image` → `generate_image`、`gemini_optimize_image` → `edit_image`。旧的 `dsh-gemini-bridge` 名称与 `gemini_*` 工具名不再使用。
 
 ## [1.2.0] - 2026-08-19
 

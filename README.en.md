@@ -12,15 +12,15 @@ When a regular DeepSeek model needs to look at, generate, or edit an image, the 
 
 | Tool | Purpose |
 | --- | --- |
-| `gemini_vision` | Recognize / read / describe / analyze images (OCR, objects, charts); accepts local paths or http(s) URLs |
-| `gemini_generate_image` | Text-to-image generation, always followed by an **automatic vision self-check** (auto redraw with a refined prompt when the result misses the mark) |
-| `gemini_optimize_image` | Edit / optimize an existing image: analyze the source → generate an improved version → self-check loop |
+| `vision_read` | Recognize / read / describe / analyze images (OCR, objects, charts); accepts local paths or http(s) URLs |
+| `generate_image` | Text-to-image generation, always followed by an **automatic vision self-check** (auto redraw with a refined prompt when the result misses the mark) |
+| `edit_image` | Edit / optimize an existing image: analyze the source → generate an improved version → self-check loop |
 
 ## ✨ Highlights
 
 - **All-in-one, zero model switching**: use your regular DeepSeek model; the plugin routes vision / generation / editing to the right multimodal backend transparently.
 - **More complete than modlens**: modlens only gives a text-only model "eyes"; this plugin is a **full loop of vision recognition + image generation + image editing + self-check feedback**, reusing your own Gemini API key — no third-party bridge, no extra subscription.
-- **Automatic routing**: the DeepSeek model picks the right tool (`gemini_vision` / `gemini_generate_image` / `gemini_optimize_image`) from the injected system prompt and tool descriptions.
+- **Automatic routing**: the DeepSeek model picks the right tool (`vision_read` / `generate_image` / `edit_image`) from the injected system prompt and tool descriptions.
 - **Quality gate**: every generated/edited image is checked by a vision model; failures trigger an automatic redraw with a refined prompt, and the verdict (description / pass-fail / issue list) is reported back.
 
 ## 🧩 Requirements (dependencies)
@@ -78,9 +78,9 @@ Pick any official model from the dropdown, or type a custom model name; unavaila
 
 ## ⚙️ Notes
 
-- Config (including the API key) lives in `~/.dsh/gemini-bridge.json`.
+- Config (including the API key) lives in `~/.dsh/vision-imagen.json`.
 - Every generated image is checked by a vision model and the feedback is reported (closed loop, no modlens dependency).
-- Images are saved to `~/.dsh/gemini-bridge-images/`; tool result cards show the image inline with a clickable link `/api/gemini-bridge/images/<file>`.
+- Images are saved to `~/.dsh/vision-imagen-images/`; tool result cards show the image inline with a clickable link `/api/vision-imagen/images/<file>`.
 - Uses the **native Gemini REST API** (`generateContent` / `predict`) only; do not append `/openai` to the endpoint.
 
 ## ❓ FAQ
@@ -92,16 +92,16 @@ A: Generative models occasionally drift (missing fingers, extra digits, garbled 
 A: No. Gemini is the default (free key), but the OpenAI-compatible backend accepts GPT-4o, Qwen-VL, GLM-4V, gpt-image, DALL-E, Flux, Stable Diffusion and many other models/platforms.
 
 **Q: Is my API key safe?**
-A: The key is stored only in the local `~/.dsh/gemini-bridge.json` and is used solely to call your chosen backend. The settings page only echoes the last 4 characters.
+A: The key is stored only in the local `~/.dsh/vision-imagen.json` and is used solely to call your chosen backend. The settings page only echoes the last 4 characters.
 
 **Q: Where are generated images stored?**
-A: `~/.dsh/gemini-bridge-images/`, and they are also registered as attachments so they appear inline in the session.
+A: `~/.dsh/vision-imagen-images/`, and they are also registered as attachments so they appear inline in the session.
 
 ## 🔒 Security
 
 - The API key is stored locally only; the settings page masks it (last 4 chars).
-- The plugin's HTTP routes (`/api/gemini-bridge/*`) only accept loopback requests (non-loopback hosts get 403).
-- Never commit `~/.dsh/gemini-bridge.json` to any repository.
+- The plugin's HTTP routes (`/api/vision-imagen/*`) only accept loopback requests (non-loopback hosts get 403).
+- Never commit `~/.dsh/vision-imagen.json` to any repository.
 
 ## 🤝 Contributing
 

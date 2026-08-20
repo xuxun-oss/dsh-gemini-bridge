@@ -1,6 +1,6 @@
 {
   "name": "dsh-vision-imagen",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "description": "DeepSeek Harness 全能插件：识别/生图/改图一体化，无需切换模型——用常规 DeepSeek 模型即可自动调用视觉与生图模型（gemini_vision / gemini_generate_image / gemini_optimize_image）。多后端：Gemini 原生 + 任意 OpenAI 兼容服务（GPT-4o、Qwen-VL、GLM-4V、Moonshot、gpt-image、DALL-E、Flux、Stable Diffusion、OpenRouter、硅基流动、各类中转等），生成后自动视觉自检反馈，优于 modlens。",
   "keywords": [
     "deepseek",
